@@ -2,7 +2,7 @@
 	**cat /proc/sys/vm/swappiness** -> 60
 	* Set the value to 1 if necessary<br />
 	**sudo sysctl vm.swappiness=1 while system is running**<br />
-	**for rebootproof config add vm.swappiness = 15 to /etc/sysctl.conf**
+	**for rebootproof config add vm.swappiness = 1 to /etc/sysctl.conf**
 
 
 2. Show the mount attributes of all volumes	
