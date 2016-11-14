@@ -1,6 +1,6 @@
 ## AWS Servers
 
-Server Name            | Public DNS                                            | IP
+Server Name            | Public DNS                                            | Public IP
 -----------------------|-------------------------------------------------------|---------------
 Clouder Manager Server | ec2-35-156-79-111.eu-central-1.compute.amazonaws.com  | 35.156.79.111
 Node 1                 | ec2-35-156-86-105.eu-central-1.compute.amazonaws.com  | 35.156.86.105
