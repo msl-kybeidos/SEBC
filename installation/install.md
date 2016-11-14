@@ -32,7 +32,7 @@
 
 ## <center> Cloudera Manager architecture
 
-The Cloudera Manager server supports
+* The Cloudera Manager server supports
     * Administrative access
     * Package repository links
     * Management Service: enterprise services & logging
