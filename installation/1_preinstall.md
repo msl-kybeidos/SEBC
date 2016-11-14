@@ -1,35 +1,35 @@
-1. Check vm.swappiness on all your nodes
-	*cat /proc/sys/vm/swappiness -> 60
-		* Set the value to 1 if necessary
-			*sudo sysctl vm.swappiness=1
+1. Check vm.swappiness on all your nodes<br />
+	**cat /proc/sys/vm/swappiness** -> 60
+	* Set the value to 1 if necessary<br />
+	*sudo sysctl vm.swappiness=1
 
 2. Show the mount attributes of all volumes	
-	**mount -l**
-	/dev/xvda1 on / type ext4 (rw)
-	proc on /proc type proc (rw)
-	sysfs on /sys type sysfs (rw)
-	devpts on /dev/pts type devpts (rw,gid=5,mode=620)
-	tmpfs on /dev/shm type tmpfs (rw,rootcontext="system_u:object_r:tmpfs_t:s0")
-	none on /proc/sys/fs/binfmt_misc type binfmt_misc (rw)
-	/dev/xvdf on /someplace type ext4 (rw)
+	**mount -l**<br />
+	/dev/xvda1 on / type ext4 (rw)<br />
+	proc on /proc type proc (rw)<br />
+	sysfs on /sys type sysfs (rw)<br />
+	devpts on /dev/pts type devpts (rw,gid=5,mode=620)<br />
+	tmpfs on /dev/shm type tmpfs (rw,rootcontext="system_u:object_r:tmpfs_t:s0")<br />
+	none on /proc/sys/fs/binfmt_misc type binfmt_misc (rw)<br />
+	/dev/xvdf on /someplace type ext4 (rw)<br />
 
 
-3. Show the reserve space of any non-root, ext-based volumes
-	*Had to create one first*
-	**df -h -t ext4**
-	Filesystem      Size  Used Avail Use% Mounted on
-	/dev/xvda1      7.8G  666M  6.7G   9% /
-	/dev/xvdf       9.8G   23M  9.2G   1% /someplace
+3. Show the reserve space of any non-root, ext-based volumes<br />
+	*Had to create one first*<br />
+	**df -h -t ext4**<br />
+	Filesystem      Size  Used Avail Use% Mounted on<br />
+	/dev/xvda1      7.8G  666M  6.7G   9% /<br />
+	/dev/xvdf       9.8G   23M  9.2G   1% /someplace<br />
 
-4. Show that transparent hugepages is disabled **Please give feadback if there is another better solution**
-	**cat /sys/kernel/mm/transparent_hugepage/enabled**
-	disabled if showing **always madvise [never]**
-	Bootup Otion in grub.conf only changed /sys/kernel/mm/transparent_hugepage/enabled but not /sys/kernel/mm/transparent_hugepage/defrag
+4. Show that transparent hugepages is disabled **Please give feadback if there is another better solution**<br />
+	**cat /sys/kernel/mm/transparent_hugepage/enabled**<br />
+	disabled if showing **always madvise [never]**<br />
+	Bootup Otion in grub.conf only changed /sys/kernel/mm/transparent_hugepage/enabled but not /sys/kernel/mm/transparent_hugepage/defrag<br />
 	found solution with startup skript: https://answers.splunk.com/answers/401192/disable-thp-in-aws-linux-ami.html
-	/etc/init.d/disable-transparent-hugepages skript now runs at startup
+	/etc/init.d/disable-transparent-hugepages skript now runs at startup<br />
 	now all four transparent_hugepage/enable, transparent_hugepage/defrag, redhat_transparent_hugepage/enable, redhat_transparent_hugepage/defrag is disabled and showing **always madvise [never]**
 
-5. Report the network interface attributes
+5. Report the network interface attributes<br />
 	**ifconfig**
 	eth0      Link encap:Ethernet  HWaddr 02:AE:72:72:37:DD
           inet addr:172.31.7.178  Bcast:172.31.15.255  Mask:255.255.240.0
@@ -62,11 +62,13 @@ lo        Link encap:Local Loopback
 
 7. Verify the nscd service is running
 	*is also not installed on cent...:-(*
+	sudo yum install nscd
 	**service nscd status**
 	nscd (pid 1480) is running...
 
 8. Verify the ntpd service is running
 	*is not installed on cent...*
+	sudo yum install ntp
 	**service ntpd status**
 	ntpd (pid  1607) is running...
 
