@@ -1,15 +1,16 @@
 mysql> show slave status \G
+mysql> show slave status \G;
 *************************** 1. row ***************************
                Slave_IO_State: Waiting for master to send event
-                  Master_Host: ip-172-31-7-178.eu-central-1.compute.internal
-                  Master_User: root
+                  Master_Host: 172.31.11.226
+                  Master_User: repl
                   Master_Port: 3306
                 Connect_Retry: 60
-              Master_Log_File: mysql-bin.000001
-          Read_Master_Log_Pos: 1098
+              Master_Log_File: mysql-bin.000004
+          Read_Master_Log_Pos: 43794070
                Relay_Log_File: mysqld-relay-bin.000002
-                Relay_Log_Pos: 1052
-        Relay_Master_Log_File: mysql-bin.000001
+                Relay_Log_Pos: 43794059
+        Relay_Master_Log_File: mysql-bin.000004
              Slave_IO_Running: Yes
             Slave_SQL_Running: Yes
               Replicate_Do_DB:
@@ -21,8 +22,8 @@ mysql> show slave status \G
                    Last_Errno: 0
                    Last_Error:
                  Skip_Counter: 0
-          Exec_Master_Log_Pos: 1098
-              Relay_Log_Space: 1209
+          Exec_Master_Log_Pos: 43794070
+              Relay_Log_Space: 43794216
               Until_Condition: None
                Until_Log_File:
                 Until_Log_Pos: 0
