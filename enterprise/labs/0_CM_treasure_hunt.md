@@ -37,3 +37,4 @@
 	* Enable TLS Encryption because keytabs are getting send over network during installation
 	* Install JCE Unlimited Strength thingi for AES-256 encryption
 	* Create Principal for CMS
+	* -> http://www.cloudera.com/documentation/enterprise/5-8-x/topics/cm_sg_intro_kerb.html#xd_583c10bfdbd326ba--6eed2fb8-14349d04bee--76dd
