@@ -7,6 +7,8 @@
   	**hdfs dfs -mkdir /user/msl-kybeidos**
   *Run the following exercises as this user
   	**su msl-kybeidos**<br />
+    
+* The jar used from here resides in /opt/cloudera/parcels/CDH-5.8.3-1.cdh5.8.3.p0.2/jars/
 
 * Create a 10 GB file using teragen
 	* Set the number of mappers to four
